@@ -1,4 +1,4 @@
-def hello(word):
-    print(str(word))
+def greeting(string):
+    print(string.capitalize())
 
-hello('World')
+greeting('hi Nick!')
