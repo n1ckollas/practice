@@ -71,78 +71,76 @@
 <script>
 export default {
   name: 'app',
-  data: function(){
-    return  {
-      title: 'Hello World',
-      link: 'http://google.com',
-      finishedLink: '<a href="https://google.com">google</a>',
-      counter: 0,
-      x:0,
-      y:0,
-      name: 'Mykola',
-      rcounter: 0,
-      secondCounter: 0,
-      attachedRed: false,
-      color:'yellow',
-      width: 200,
-      show: true,
-      ingredients: ['meat', 'fruit', 'cookies'],
-      persons: [
-          { name: 'Max', age: 27, color: 'red' },
-          { name: 'Anna', age: 'unknown', color: 'blue' }
-      ],
-    };
-  },
-    computed:{
-        divClasses: function(){
-            return {
-                red: this.attachedRed,
-                blue: !this.attachedRed,
+ data: {
+                title: 'Hello World',
+                link: 'http://google.com',
+                finishedLink: '<a href="https://google.com">google</a>',
+                counter: 0,
+                x:0,
+                y:0,
+                name: 'Mykola',
+                rcounter: 0,
+                secondCounter: 0,
+                attachedRed: false,
+                color:'yellow',
+                width: 200,
+                show: true,
+                ingredients: ['meat', 'fruit', 'cookies'],
+                persons: [
+                    { name: 'Max', age: 27, color: 'red' },
+                    { name: 'Anna', age: 'unknown', color: 'blue' }
+                ],
+            },
+            computed:{
+                divClasses: function(){
+                    return {
+                        red: this.attachedRed,
+                        blue: !this.attachedRed,
+                    }
+                },
+                myStyle: function(){
+                    return{
+                        'background-color' : 'pink',
+                        'width' : this.width + 'px', 
+                    }
+                },
+                output: function(){
+                    console.log('computed');
+                    return this.rcounter > 5 ? 'Greater than 5' : 'Smaller'
+                }
+            },
+            watch:{
+                rcounter: function(value){ //the name counter matches the name in the data object
+                    var self = this;
+                    setTimeout(function(){
+                        self.rcounter  = 0;
+                    }, 1000);
+                }
+            },
+            methods: {
+                changeTitle: function(event){
+                    this.title = event.target.value;
+                    return this.title;
+                },
+                sayHello: function(){
+                    this.title = "New hello"
+                    return this.title
+                },
+                increase: function(step, event){
+                    return this.counter += step;
+                },
+                updateCoords: function(event){
+                    this.x = event.clientX
+                    this.y = event.clientY
+                },
+                alertMe: function(){
+                    alert('Alert!')
+                },
+                result: function(){
+                    console.log('method');
+                    return this.rcounter > 5 ? 'Greater than 5' : 'Smaller'
+                }
             }
-        },
-        myStyle: function(){
-            return{
-                'background-color' : 'pink',
-                'width' : this.width + 'px', 
-            }
-        },
-        output: function(){
-            console.log('computed');
-            return this.rcounter > 5 ? 'Greater than 5' : 'Smaller'
-        }
-    },
-    watch:{
-        rcounter: function(value){ //the name counter matches the name in the data object
-            var self = this;
-            setTimeout(function(){
-                self.rcounter  = 0;
-            }, 1000);
-        }
-    },
-    methods: {
-        changeTitle: function(event){
-            this.title = event.target.value;
-            return this.title;
-        },
-        sayHello: function(){
-            this.title = "New hello"
-            return this.title
-        },
-        increase: function(step, event){
-            return this.counter += step;
-        },
-        updateCoords: function(event){
-            this.x = event.clientX
-            this.y = event.clientY
-        },
-        alertMe: function(){
-            alert('Alert!')
-        },
-        result: function(){
-            console.log('method');
-            return this.rcounter > 5 ? 'Greater than 5' : 'Smaller'
-        }
-    }
 }
 </script>
 
