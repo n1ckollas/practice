@@ -16,7 +16,7 @@ export default {
                 // el.style.backgroundColor = binding.value;
                 let delay = 0;
                 if(binding.modifiers['delay']){
-                delay = 3000
+                    delay = 3000
                 }
                 setTimeout(() =>{
                     if(binding.arg == 'background'){
@@ -27,8 +27,7 @@ export default {
                 }, delay);
             }
         }
-    }
-    
+    }   
 }
 </script>
 <style scoped>
