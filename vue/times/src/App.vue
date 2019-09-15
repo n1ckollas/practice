@@ -1,16 +1,15 @@
 <template>
   <div id="app" class ="container-fluid">
-    <Parent />
+    <Directives />
   </div>
 </template>
 
 <script>
-import Parent from './components/Parent.vue'
-
+import Directives from './components/Directives.vue'
 export default {
   name: 'app',
   components: {
-    Parent
+    Directives
   }
 }
 </script> 
