@@ -1,15 +1,16 @@
 <template>
   <div id="app" class ="container-fluid">
-    <Directives />
+    <Filters />
   </div>
 </template>
 
 <script>
-import Directives from './components/Directives.vue'
+import Filters from './components/Filters.vue'
+
 export default {
   name: 'app',
   components: {
-    Directives
+    Filters
   }
 }
 </script> 

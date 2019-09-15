@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import App from './App.vue'
 import 'bootstrap/dist/css/bootstrap.min.css'
+Vue.filter('to-lowercase', function(value){
+  return value.toLowerCase();
+})
 Vue.directive('highlight', {
   bind(el, binding, vnode){
     // el.style.backgroundColor = binding.value;
