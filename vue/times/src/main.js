@@ -20,6 +20,11 @@ Vue.directive('highlight', {
     }, delay);
   }
 })
+Vue.mixin({
+  created(){
+    console.log('Global Mixin -  Created Hook.')
+  }
+})
 Vue.config.productionTip = false
 
 new Vue({

@@ -13,26 +13,11 @@
     </div>    
 </template>
 <script>
+import { filterMixin } from '../mixins/filter.mixin.js'
 export default {
-    data(){
-        return {
-            text : 'Hello world!!',
-            fruits: ['Apple', 'Banana', 'Mango', 'Melon'],
-            filteredText:'',
-        }
-    },
-    filters:{
-        toUppercase(value){
-            return value.toUpperCase();
-
-        }
-    },
-    computed: {
-        filteredFruits(){
-            return this.fruits.filter((element) => {
-                return element.match(this.filteredText);
-            })
-        }
+    mixins:[filterMixin],
+    created() {
+        console.log('Inside ths component')
     }
 }
 </script>
