@@ -1,13 +1,13 @@
 <template>
     <div class="row">
         <div class="col-md-12">
-            <h1>Filters and Mixins</h1>
+            <h1 class="animated infinite bounce delay-2s">Filters and Mixins</h1>
             <p>{{ text | toUppercase | to-lowercase }}</p>
             <hr>
             <input type="text" name="text" v-model="filteredText" id="">
             <hr>
             <ul>
-                <li v-for="f in filteredFruits">{{f}}</li>
+                <li v-for="f in filteredFruits" v-bind:key="f">{{f}}</li>
             </ul>
         </div>
     </div>    

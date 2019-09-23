@@ -12,7 +12,6 @@ export const filterMixin = {
     filters:{
         toUppercase(value){
             return value.toUpperCase();
-
         }
     },
     computed: {
