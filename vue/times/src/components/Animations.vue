@@ -30,6 +30,12 @@
                     <div class="alert alert-info" v-if="show" key="info">Alert ONE</div>
                     <div class="alert alert-warning" v-else key="warning">Alert TWO</div>
                 </transition>
+                <button>
+                    Add Item
+                </button>
+                <ul>
+                    <li v-for="number in numbers" :key="number" class="list-group-item">{{number}}</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -39,7 +45,8 @@ export default {
     data() {
         return {
             show:true,
-            alertAnimation:'fade'
+            alertAnimation:'fade',
+            numbers:[1, 2,3,5,4]
         }
     }
 }
