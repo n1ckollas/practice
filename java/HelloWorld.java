@@ -1,8 +1,9 @@
 public class HelloWorld {
     public static void main(String[] args){
         System.out.println("New File");
+        Test();
     }
-    public static void hello(String[] args){
-        System.currentTimeMillis();
-    }   
+    public static void Test(){
+        System.out.println("Viola");
+    }
    }
