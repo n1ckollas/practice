@@ -54,8 +54,70 @@ public class Hello{
         System.out.println(myNewShortValue);
 
         // floating numbers
+
+        float myMinfloatVal = Float.MIN_VALUE;
+        float myMaxfloatVal = Float.MAX_VALUE;
+        System.out.println("myMinfloatVal => " + myMinfloatVal);
+        System.out.println("myMaxfloatVal => " + myMaxfloatVal);
+
+        double myMindoubleVal = Double.MIN_VALUE;
+        double myMaxdoubleVal = Double.MAX_VALUE;
+        System.out.println("myMindoubleVal => " + myMindoubleVal);
+        System.out.println("myMaxdoubleVal => " + myMaxdoubleVal);
+
+        System.out.println("myMindoubleVal > myMinfloatVal");
+        System.out.println(myMindoubleVal > myMinfloatVal);
+        
+        System.out.println(myMaxdoubleVal);
+        int myIntValue = 5 / 3;
+        float myFloatValue = (float) 5 / (float) 3;
+        float myFloatVal2 = 5f / 3f;
+        double myDoubleValue = 5d / 3d;
+
+        System.out.println("invalue = " + myIntValue);
+        System.out.println("float val = " + myFloatValue);
+        System.out.println("float val2 = " + myFloatVal2);
+        System.out.println("my Double val = " + myDoubleValue);
+        double pounds = 200d;
+        double kilos = pounds * 0.45359237d;
+        System.out.println(kilos);
+
+        // Char and Boolean
+        char myChar = 'D'; // You can only store a single character
+        char myNumChar = (char) 65; // char occupies 2 bytes or 16 bits in memory hence its 16 bits;
+        char myDchar = (char) '\u0044';
+        System.out.println(myDchar);
+        System.out.println(myNumChar);
+
+        boolean myTrueVal = true;
+        boolean myFalseVal = false;
+        
+        boolean isCustomerOver21 = true;
+        
+        // String DAta Types and primitives recap
+
+
+        // byte
+        // short
+        
+        // int
+        // long
+        
+        // float
+        // double
+        
+        // char
+        // boolean
+        
+       String myString = "This is a string";
+       System.out.println("myString is equal to " + myString); 
+       myString = myString + "\u00A9 2019";
+       System.out.println(myString);
+       System.out.println("String plus an integer" + (int) 52);
+
+        // Operators.
                 
 
-       
-   } 
+
+   }
 }
