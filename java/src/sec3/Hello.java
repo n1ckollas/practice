@@ -116,8 +116,30 @@ public class Hello{
        System.out.println("String plus an integer" + (int) 52);
 
         // Operators.
-                
+        int result = 10;
 
+        boolean isAlean = false;
+        if (isAlean == false){
+            System.out.println("it is not an alean");
+            System.out.println("another stirng. tada.");
+        }
+        
+        int topScore = 80;
+        int topScore2 = 81;
+        if(topScore > 90 || topScore2 > 70){
+            System.out.println("One condition is true");
+        }
+        //test
+
+        double varDouble = 20d;
+        double varDouble2 = 80d;
+        double testResult = (varDouble + varDouble2) * 100d;
+        int remainder = (int) testResult % 40;
+        boolean isEnough = remainder == 0 ? true : false;
+        System.out.println(isEnough);
+        if(!isEnough){
+            System.out.println("Got some remainder");
+        }
 
    }
 }
