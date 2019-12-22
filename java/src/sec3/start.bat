@@ -1,2 +1,2 @@
-javac Section3.java
-java Section3
+javac ThreeOriginal.java
+java ThreeOriginal

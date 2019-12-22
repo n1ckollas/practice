@@ -1,2 +1,2 @@
-javac SectionFour.java
-java SectionFour
+javac FourOriginal.java
+java FourOriginal

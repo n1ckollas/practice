@@ -1,0 +1,2 @@
+javac ThreeSection.java
+java ThreeSection

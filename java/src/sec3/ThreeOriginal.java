@@ -1,4 +1,4 @@
-class Section3 {
+class ThreeOriginal {
     public static void main(String args[]){
         byte b = 42;
         char c = 'A';
