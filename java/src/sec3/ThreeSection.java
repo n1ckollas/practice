@@ -16,6 +16,34 @@ class ThreeSection{
         double dbltype = (f * b) + (c / chr) - (dbl - b);
         System.out.print(dbltype);
         
+        // operators
+        int result = 1 + 2;
+        int prevreREs = result;
+        System.out.println("operators");
+        result = result -1;
+        System.out.println(result);
+        result = result * 10;
+        System.out.println(result);
+        result = result / 5;
+        System.out.println(result);
+        result = result % 3;
+        System.out.println(result);
+        
 
+        // short hand ops
+        System.out.println("shorthand operators");
+        result ++;
+        System.out.println(result);
+        result --;
+        System.out.println(result);
+        result += 2;
+        System.out.println(result);
+        result *= 10;
+        System.out.println(result);
+        result /=3;
+        System.out.println(result);
+        result -=2;
+        System.out.println(result);
+        
     }
 }
