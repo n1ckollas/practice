@@ -1,20 +1,31 @@
 class ThreeOriginal {
     public static void main(String args[]){
-        byte b = 42;
-        char c = 'A';
-        short s = 1024;
-        int i = 50_000;
+        // a width on 8 bits means that the representation of a 
+        // character or integer fits in to computer memory
+        // in a number of 8 0s or 1s e.g 01100110 the lenght of it is
+        // 8 bits, with bit being 0 or 1.
+        byte b = 127; // width 8 
+        short s = 32_767; // width 16
+        int i = 2_147_483_647; // width 32 
+        long l = 234L; // width 64
         float f = 5.67f;
-        double d = .1234;
+        double d = .1234d;
+        char c = 'A'; // width 16
+        String str = "Nick";
+        boolean bool = true;
+
+        // type precedense 
         double resultOne = (f * b) + (i / c) - (d * s);
         System.out.println("result = " + resultOne);
+
+        // Array 
         int month_days [];
         month_days = new int[12];
         month_days[1] = 28;
         System.out.println(month_days[1]);
         System.out.println(month_days[0]);
 
-        // Lessons
+        // Lessons from section 3
         System.out.println("Hello, Tim");
 
         int myFirstNumber = (10 + 5) + (2 * 10);
