@@ -1,6 +1,6 @@
 class FourOriginal{
     public static void main(String[] args){
-        System.out.println("FourFourFourFourSection 4 is ready.");
+        System.out.println("FourSection 4 is ready.");
         // keywords and expressions
         // a mile is equal to 1.609344 kilometers
         double kilometers = (100 * 1.609344);
