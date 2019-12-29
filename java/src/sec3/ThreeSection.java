@@ -61,8 +61,39 @@ class ThreeSection {
         
         // booleans
 
-
+       if(bool == false){
+           System.out.print("you will not see me");
+       } 
+       if(bool){
+           System.out.println("you will see me");
+       }
+       if(bool == true){
+           System.out.println("You will see me too.");
+       }
+       boolean isTrue = bool ? true : false;
+       boolean reverseTrue = !bool ? true : false;
+       System.out.println(isTrue);
+       System.out.println(reverseTrue);
         
+
+       int oneScore;
+       int twoScore;
+       oneScore = 10;
+       twoScore = 100;
+
+       if(oneScore > 5 && twoScore > 90){
+           System.out.println("Both scores are bigger");
+       }
+       if(oneScore > 40 || twoScore > 90){
+           System.out.println("one of the conditions is trued");
+       }
+
+       double dval = 20.00d;
+       double dres = dval * 10.34 / 34.56;
+       System.out.println("The result is " + dres);
+
+
+
         
         
         
