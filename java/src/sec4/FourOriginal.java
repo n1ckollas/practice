@@ -6,10 +6,6 @@ class FourOriginal{
         int levelCompleted = 5;
         int bonus = 100;
 
-        boolean newGameOver = true;
-        int newScore = 10000;
-        int newLevelCompleted = 8;
-        int newBonus = 200;
         score = 10000;
         levelCompleted = 8;
         bonus = 200;
@@ -86,7 +82,8 @@ class FourOriginal{
         return position;
     }
 
-    public static int calculateScore(boolean gameOver,int score, int levelCompleted, int bonus) {
+    public static int calculateScore(boolean gameOver,int score, 
+    int levelCompleted, int bonus) {
 
         if(gameOver) {
             int finalScore = score + (levelCompleted * bonus);
