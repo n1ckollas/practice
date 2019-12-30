@@ -19,8 +19,9 @@ class FourSection{
         calculateScore(75);
 
         calculateScore();
-
         
+
+
     }
 
     public static int calculateScore(boolean gameOver, int score, 
