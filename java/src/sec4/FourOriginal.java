@@ -1,84 +1,18 @@
 class FourOriginal{
     public static void main(String[] args){
-        System.out.println("FourSection 4 is ready.");
-        // keywords and expressions
-        // a mile is equal to 1.609344 kilometers
-        double kilometers = (100 * 1.609344);
-        int highScore = 50;
-
-        if(highScore == 50) {
-            System.out.println("This is an expression");
-
-        }
-        
-        // Statements whiteSpace and indetation.
-        int myVariable = 50;
-
-        if (myVariable == 50) {
-            System.out.println("Printed");
-        }
-
-
-        myVariable++;
-        myVariable--;
-        System.out.println("This is a test");
-
-        System.out.println("This is" +
-                " another" +
-                " still more.");
-
-        int anotherVariable = 50;
-        myVariable--;
-        System.out.println("This is another one");
-
-
-        //Expression, Statements, code-blockss, Methods -and more Code
-        // blocks
 
         boolean gameOver = true;
         int score = 800;
         int levelCompleted = 5;
         int bonus = 100;
 
-//        if(score < 5000 && score >1000) {
-//            System.out.println("This was was less than 5000 but greater than 1000");
-//        } else if(score < 1000) {
-//            System.out.println("Your score was less than 1000");
-//        } else {
-//            System.out.println("Got here");
-//
-//        }
-
-        if(gameOver) {
-            int finalScore = score + (levelCompleted * bonus);
-            finalScore += 1000;
-            System.out.println("Your final score was " + finalScore);
-        }
-
-        // Print out a second score on the screen with the following
-        // score set to 10000
-        // levelCompleted set to 8
-        // bonus set to 200
-        // But make sure the first printout above still displays as well
-
-//        boolean newGameOver = true;
-//        int newScore = 10000;
-//        int newLevelCompleted = 8;
-//        int newBonus = 200;
-//
-//        if(newGameOver) {
-//            int finalScore = newScore + (newLevelCompleted * newBonus);
-//            System.out.println("Your final score was " + finalScore);
-//        }
+        boolean newGameOver = true;
+        int newScore = 10000;
+        int newLevelCompleted = 8;
+        int newBonus = 200;
         score = 10000;
         levelCompleted = 8;
         bonus = 200;
-
-        if(gameOver) {
-            int finalScore = score + (levelCompleted * bonus);
-            System.out.println("Your final score was " + finalScore);
-        }
-
 
         // Methods
 
@@ -89,15 +23,13 @@ class FourOriginal{
         calculateScore(gameOver, score, levelCompleted, bonus);
 
 
+        int calcScore = calculateScore("Tim", 500);
+        System.out.println("New score is " + calcScore);
 
-
-
-
-
-        int newScore = calculateScore("Tim", 500);
-        System.out.println("New score is " + newScore);
         calculateScore(75);
+
         calculateScore();
+
         double centimeters = calcFeetAndInchesToCentimeters(6,0);
         if(centimeters <0.0) {
             System.out.println("Invalid parameters");
@@ -141,15 +73,6 @@ class FourOriginal{
 
     public static int calculateHighScorePosition(int playerScore) {
 
-//        if(playerScore >= 1000) {
-////            return 1;
-////        } else if(playerScore >= 500) {
-////            return 2;
-////        } else if(playerScore >= 100) {
-////            return 3;
-////        }
-////
-////        return 4;
         int position = 4;  // assuming position 4 will be returned
 
         if(playerScore >= 1000) {
@@ -198,6 +121,7 @@ class FourOriginal{
         System.out.println(inches + " inches is equal to " + feet + " feet and " + remainingInches + " inches");
         return calcFeetAndInchesToCentimeters(feet, remainingInches);
     }
+
     public static int calculateScore(String playerName, int score) {
         System.out.println("Player " + playerName + " scored " + score + " points");
         return score * 1000;
