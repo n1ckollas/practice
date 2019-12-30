@@ -19,9 +19,28 @@ class FourSection{
         calculateScore(75);
 
         calculateScore();
+
+        double cm = calcFeetAndInchesToCentimeters(5, 0);
+        System.out.println(cm);
+        cm  = calcFeetAndInchesToCentimeters(354);
+        System.out.println(cm);
+
+    }
+    public static double calcFeetAndInchesToCentimeters(int feet, int inches){
+        if((feet >= 0) && (inches >= 0 && inches <= 12)){
+            int totalInches = (feet * 12) + inches;
+            double cm = totalInches * 2.54;
+            return cm;
+        }
+        return -1;
         
-
-
+    }
+    public static double calcFeetAndInchesToCentimeters(int inches){
+        if(!(inches >= 0)){
+            return -1;
+        }
+        double cm = inches * 2.54;
+        return cm;
     }
 
     public static int calculateScore(boolean gameOver, int score, 
