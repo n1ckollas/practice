@@ -1,0 +1,2 @@
+javac FiveOriginal.java
+java FiveOriginal

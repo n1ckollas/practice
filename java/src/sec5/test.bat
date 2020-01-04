@@ -1,0 +1,2 @@
+javac FiveSection.java
+java FiveSection
