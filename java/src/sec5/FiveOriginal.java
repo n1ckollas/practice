@@ -49,8 +49,19 @@ class FiveOriginal{
             System.out.println(isLeapYear(2000));
 
             // for loop
+
+            for(int i=1; i<5; i++){
+                System.out.println("Loop " + i);
+            }
+
+            for(int r=2; r<9; r++){
+                System.out.println("Interest reate for a 100 : " + calculateInterest(100, r));
+            }
             
 
+        }
+        public static double calculateInterest(double amount, double interestRate){
+            return(amount * (interestRate/100));
         }
         public static void printNumberInWord(int param){
             switch(param){
