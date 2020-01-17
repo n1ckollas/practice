@@ -58,8 +58,48 @@ class FiveOriginal{
                 System.out.println("Interest reate for a 100 : " + calculateInterest(100, r));
             }
             
-
+            System.out.println("CAN PACK Results ::::::::::::::::::");
+            // System.out.println(canPack(1, 0, 4));
+            // System.out.println(canPack(1, 0, 5));
+            // System.out.println(canPack(0, 5, 4));
+            // System.out.println(canPack(2, 2, 11));
+            // System.out.println(canPack(-3, 2, 12));
+            // System.out.println(canPack(2, 10, 18));
+            // System.out.println(canPack(2, 2, 12));
+            System.out.println(canPack(1, 0, 6));
         }
+        public static boolean canPack(int bigCount, int smallCount, int goal){
+            if(bigCount < 0 || smallCount < 0 || goal < 0){
+                return false;
+            }
+            if(bigCount == 0 && smallCount >= goal){
+                return true;
+            }
+            if( bigCount == 0 && smallCount < goal){
+                return false;
+            }
+            int bigBagCanFit = goal / 5;
+            int remainedBags = goal;
+            System.out.println("bigBagsCanFit" + bigBagCanFit);
+            int remainderAfterFit = goal % 5;
+            if(bigBagCanFit != 0){
+                if(bigBagCanFit > bigCount){
+                    remainedBags = goal - (bigCount * 5);
+                } else {
+                    remainedBags = goal - (bigBagCanFit * 5);
+                }
+                if(remainedBags == 0) return true;
+                System.out.println("Small Count"+smallCount+ "||| RemaineBags" + remainedBags);
+                return smallCount >= remainedBags ? true : false;
+            }else{
+                System.out.println("NO BIG BAGS ||| Small bags only = ");
+                return smallCount >= goal ? true : false;
+            }
+            // remainedBags = goal - smallCount;
+            // System.out.println("Remained Bags = " + remainedBags);
+            // return remainedBags >= 0? true : false;
+        }
+
         public static double calculateInterest(double amount, double interestRate){
             return(amount * (interestRate/100));
         }
@@ -147,6 +187,7 @@ class FiveOriginal{
             }
         }
         // For loop
+
 
 
 
