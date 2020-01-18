@@ -68,6 +68,22 @@ class FiveOriginal{
             // System.out.println(canPack(2, 2, 12));
             System.out.println(canPack(1, 0, 6));
         }
+        public static getLargestPrime(int number){
+            if(number < 1){
+                return -1;
+            }
+            int b =2;
+            while (number > b){
+                if(number % b == 0){
+                    number = number / b;
+                    b = 2;
+                } else {
+                    b += 1;
+                }
+            }
+            return b;
+
+        }
         public static boolean canPack(int bigCount, int smallCount, int goal){
             if(bigCount < 0 || smallCount < 0 || goal < 0){
                 return false;
@@ -81,7 +97,7 @@ class FiveOriginal{
             int bigBagCanFit = goal / 5;
             int remainedBags = goal;
             System.out.println("bigBagsCanFit" + bigBagCanFit);
-            int remainderAfterFit = goal % 5;
+            // int remainderAfterFit = goal % 5;
             if(bigBagCanFit != 0){
                 if(bigBagCanFit > bigCount){
                     remainedBags = goal - (bigCount * 5);
