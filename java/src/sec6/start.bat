@@ -1,0 +1,2 @@
+javac SixOriginal.java
+java SixOriginal
