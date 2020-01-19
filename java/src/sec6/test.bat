@@ -1,2 +1,3 @@
-javac SixSection.java
-java SixSection
+javac Car.java
+javac Main.java
+java Main
