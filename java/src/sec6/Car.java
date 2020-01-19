@@ -1,9 +1,9 @@
 public class Car{
-    private int doors;
-    private int wheels;
+    // private int doors;
+    // private int wheels;
     private String model;
-    private String engine;
-    private String colour;
+    // private String engine;
+    // private String colour;
     public static void main(String args[]){
     }
 
