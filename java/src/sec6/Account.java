@@ -1,8 +1,3 @@
-package com.timbuchalka;
-
-/**
- * Created by dev on 2/07/15.
- */
 public class Account {
     private String number;
     private double balance;
