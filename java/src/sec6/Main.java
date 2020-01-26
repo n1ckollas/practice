@@ -47,6 +47,8 @@ public class Main{
        Account timsAccount = new Account("Tim", "tim@email.com","12345");
        System.out.println(timsAccount.getNumber() + " name " + timsAccount.getCustomerName());
 
+       Point first = new Point(6, 5);
+
         // Create a new class VipCustomer
         // it should have 3 fields name, credit limit, and email address.
         // create 3 constructors
