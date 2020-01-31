@@ -48,16 +48,12 @@ public class Main{
        System.out.println(timsAccount.getNumber() + " name " + timsAccount.getCustomerName());
 
        Point first = new Point(6, 5);
+       System.out.println(first.distance());
+       
 
-        // Create a new class VipCustomer
-        // it should have 3 fields name, credit limit, and email address.
-        // create 3 constructors
-        // 1st constructor empty should call the constructor with 3 parameters with default values
-        // 2nd constructor should pass on the 2 values it receives and add a default value for the 3rd
-        // 3rd constructor should save all fields.
-        // create getters only for this using code generation of intellij as setters wont be needed
-        // test and confirm it works.
+       // inheritance practice classes
 
+       
 
 
     }
