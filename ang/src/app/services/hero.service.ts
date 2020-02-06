@@ -14,5 +14,9 @@ export class HeroService {
     this.messagesService.add("Fetched:: Heroes")
     return of(HEROES);
   }
+  getHero(id){
+    this.messagesService.add("FOUND:: Hero ID::" + id)
+    return of(HEROES.find(hero => hero.id === id))
+  }
   
 }
