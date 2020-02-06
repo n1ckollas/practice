@@ -15,6 +15,10 @@ export class HeroService {
     this.messagesService.add('Fetched:: HEROES')
     return of(HEROES);
   }
+  getHero(id:number){
+    this.messagesService.add("FOUND :: Hero ID :: " + id);
+    return of(HEROES.find(hero => hero.id === id))
+  }
   
 
 }
