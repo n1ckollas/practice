@@ -16,4 +16,9 @@ export class HeroService {
     this.messagesService.add('HeroService: fetched heroes');
     return of(HEROES);
   }
+  getHero(id:number){
+    this.messagesService.add('HeroService: fetched ID: ' + id);
+    return of(HEROES.find(hero => hero.id === id))
+
+  }
 }
