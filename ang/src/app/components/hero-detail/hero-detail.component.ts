@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { AcivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-hero-detail',
