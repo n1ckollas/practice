@@ -1,8 +1,11 @@
+
 import { Component, OnInit, Input, EventEmitter } from '@angular/core';
 import { Hero } from 'src/app/models/hero';
+
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { HeroService } from '../../services/hero.service';
+
 
 @Component({
   selector: 'app-hero-detail',
@@ -10,11 +13,13 @@ import { HeroService } from '../../services/hero.service';
   styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
+
   hero:Hero;
   constructor(
     private location:Location,
     private route: ActivatedRoute,
     private heroService:HeroService,
+
   ) { }
 
   ngOnInit() {
@@ -29,5 +34,6 @@ export class HeroDetailComponent implements OnInit {
   goBack(){
     this.location.back();
   }
+
 
 }

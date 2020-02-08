@@ -1,9 +1,12 @@
+
 <div>
   <ul>
     <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
       <a routerLink="/detail/{{hero.id}}">
+
         <span>id: {{hero.id}} </span>name: {{hero.name}}
       </a>
     </li>
   </ul>
 </div>
+

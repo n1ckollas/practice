@@ -4,6 +4,7 @@ import {HEROES} from '../models/mock-heroes';
 import {Observable, of} from 'rxjs';
 import {MessagesService} from '../services/messages.service';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -17,6 +18,7 @@ export class HeroService {
   }
   getHero(id:number){
     this.messagesService.add("FOUND :: Hero ID :: " + id);
+
     return of(HEROES.find(hero => hero.id === id))
   }
   
