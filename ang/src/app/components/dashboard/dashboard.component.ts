@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
 import { HeroService } from '../../services/hero.service';
 import { Hero } from '../../models/hero';
+
 
 
 @Component({
@@ -10,6 +12,7 @@ import { Hero } from '../../models/hero';
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
+
   constructor(private heroService:HeroService) { }
 
   ngOnInit() {
@@ -21,5 +24,6 @@ export class DashboardComponent implements OnInit {
         this.heroes = heroes.splice(1, 5); 
     })
   }
+
 
 }
