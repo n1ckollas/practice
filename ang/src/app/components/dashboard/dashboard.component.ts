@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { HeroService } from '../../services/hero.service';
 import { Hero } from '../../models/hero';
+import { HeroService } from '../../services/hero.service'
 
 
 
@@ -11,7 +11,8 @@ import { Hero } from '../../models/hero';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  heroes: Hero[] = [];
+
+  heroes:Hero[] = []
 
   constructor(private heroService:HeroService) { }
 
@@ -21,9 +22,9 @@ export class DashboardComponent implements OnInit {
   getHeroes(){
     this.heroService.getHeroes()
       .subscribe(heroes => {
-        this.heroes = heroes.splice(1, 5); 
-    })
-  }
 
+        this.heroes = heroes.splice(1,5)
+      })
+  }
 
 }
