@@ -1,0 +1,19 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 500px;
+    background-color: blue;
+}
+.item{
+    background-color: yellow;
+    width: 80px;
+    text-align: center;
+    flex-grow: 0;
+    border: 1px solid black;
+}
+.item-19{
+    flex-grow:1;
+}
