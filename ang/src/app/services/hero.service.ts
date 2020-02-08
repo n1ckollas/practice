@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Hero } from '../models/hero';
+
 import { HEROES } from '../models/mock-heroes';
-import { Observable, of} from 'rxjs';
+import { Observable, of } from 'rxjs';
+
 import { MessagesService } from './messages.service';
 
 @Injectable({
@@ -9,16 +10,17 @@ import { MessagesService } from './messages.service';
 })
 export class HeroService {
 
-  constructor(private messagesService: MessagesService) { }
 
-  getHeroes(): Observable<Hero[]> {
-    // TODO: send the message _after_ fetching the heroes
-    this.messagesService.add('HeroService: fetched heroes');
+  constructor(private messagesService:MessagesService) { }
+
+  getHeroes(){
+    this.messagesService.add("Fetched:: Heroes")
     return of(HEROES);
   }
-  getHero(id:number){
-    this.messagesService.add('HeroService: fetched ID: ' + id);
+  getHero(id){
+    this.messagesService.add("FOUND:: Hero ID::" + id)
     return of(HEROES.find(hero => hero.id === id))
-
   }
+  
+
 }
