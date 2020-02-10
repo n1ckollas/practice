@@ -19,7 +19,17 @@ public class Main{
         System.out.println(boris.balance);
         System.out.println(boris.state);
 
+        Bank bofa = new Bank();
+        System.out.println(bofa.name);        
+        System.out.println(bofa.state);        
+        Bank chase = new Bank("Chase", "NY", "NYC", boris);
+        System.out.println(chase.account.userFname);
+        System.out.println(chase.name);
+        System.out.println(chase.state);
+        System.out.println(chase.city);
+
 
 
     }
+
 }
