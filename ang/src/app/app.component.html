@@ -4,13 +4,11 @@
     Welcome to {{ title }}!
   </h1>
   <nav>
-    <a routerLink="/heroes">Heroes</a>
-
-    <hr>
-    <a routerLink="/dashboard">Dashboard</a>
+    <ul>
+      <li><a routerLink="/heroes">Heroes</a></li>
+      <li><a routerLink="/todos">Todos</a></li>
+      <li><a routerLink="/dashboard">Dashboard</a></li>
+    </ul>
   </nav>
 </div>
-
 <router-outlet></router-outlet>
-<app-messages></app-messages>
-

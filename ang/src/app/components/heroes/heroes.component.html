@@ -1,12 +1,8 @@
-
-<div>
-  <ul>
-    <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
+<div class="container">
+    <div *ngFor="let hero of heroes" class="item item-{{hero.id}}">
       <a routerLink="/detail/{{hero.id}}">
-
-        <span>id: {{hero.id}} </span>name: {{hero.name}}
+        <span>id: {{hero.id}}</span> {{hero.name}}
       </a>
-    </li>
-  </ul>
+    </div>
 </div>
 
