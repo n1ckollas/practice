@@ -5,6 +5,7 @@ import { JsonService } from '../../services/json.service';
 import * as fromStore from '../../store';
 import { Store, Action} from '@ngrx/store';
 
+
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
@@ -24,6 +25,7 @@ export class HeroesComponent implements OnInit {
     this.store.dispatch(new fromStore.LoadTodos())
   }
 
+
   getHeroes(){
     this.heroService.getHeroes()
       .subscribe(heroes => {
@@ -33,6 +35,10 @@ export class HeroesComponent implements OnInit {
   getTodo(){
     this.jsonService.getTodo()
       .subscribe(todo => console.log(todo))
+  }
+  onSelect(hero:Hero){
+    this.selectedHero = hero
+
   }
 
 }

@@ -5,14 +5,13 @@ import { HeroDetailComponent } from './components/hero-detail/hero-detail.compon
 import { TodosComponent } from './components/todos/todos.component';
 
 
-
 const routes: Routes = [
-  {path:'', redirectTo:'/heroes', pathMatch:'full'},
-  {path:'heroes', component:HeroesComponent},
+  {path:'', redirectTo:'/dashboard', pathMatch:'full'},
+  {path:'dashboard', component:DashboardComponent},
+  {path:'heroes', component: HeroesComponent},
   {path:'todos', component:TodosComponent},
-  {path:'detail/:id', component:HeroDetailComponent},
+  {path:'detail/:id', component: HeroDetailComponent},
 ]
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

@@ -6,3 +6,12 @@
   <input [(ngModel)]="hero.name">
 
 </div>
+
+  <h2>{{hero.name}}'s details:</h2>
+  <p>id: {{hero.id}}</p>
+  <hr>
+  <h2>Edit your Hero:</h2>
+  <input type="text" [(ngModel)]="hero.name">
+</div>
+<button class="btn btn-default" (click)="goBack()">go back</button>
+
