@@ -13,6 +13,7 @@ import { Store, Action} from '@ngrx/store';
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
+  selectedHero:Hero;
   constructor(
     private heroService:HeroService,
     private jsonService:JsonService,
