@@ -10,4 +10,14 @@ public class Vehicle {
        this.state = state;
        this.type = type; 
     }
+
+    public void setState(){
+
+    }
+    public int getState(){
+        return 0;
+    }
+
+    
+
 }
