@@ -1,9 +1,7 @@
-
 public class Car extends Vehicle{
     String  make;
     String  model;
     int     cyl;
-    
 
     public Car(String make, String model, int cyl){
         this.make = make;
