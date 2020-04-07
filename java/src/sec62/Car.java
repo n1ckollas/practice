@@ -1,6 +1,5 @@
-package sec62;
 
-public class Car {
+public class Car extends Vehicle{
     String  make;
     String  model;
     int     cyl;
@@ -20,6 +19,7 @@ public class Car {
     public String getFullSpec(){
         System.out.println("Car.getFullSpec, is called");
         System.out.println("Makr: " + make + " | Model: " + model + " | Cylynders : "+ cyl);
+        return "full Spec";
     }
 
 }

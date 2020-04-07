@@ -1,4 +1,3 @@
-package sec62;
 
 public class Vehicle {
     private int state;
