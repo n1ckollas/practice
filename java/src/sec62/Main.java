@@ -6,5 +6,6 @@ public class Main{
         bmw.getFullSpec();
         bmw2.getFullSpec();
         bmw.getState();
+        bmw2.getState();
     }
 }
