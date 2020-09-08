@@ -1,3 +1,7 @@
+.main-container{
+    width: 100%;
+    height: 100%;
+}
 .header{
     width:100%;
     display:block;
@@ -11,4 +15,30 @@
 .nav ul{
     width:10%;
     margin:0 auto;
+}
+
+
+.flex-container{
+    display:flex;
+    flex-direction: column;
+    background-color: lightblue;
+    width: 100%;
+    height: 100%;
+    align-items: stretch;
+}
+.flex-container .header{
+    background-color: yellow;
+}
+
+.flex-container .content {
+    display:flex;
+    flex-direction: row;
+}
+.flex-container .content .left-column{
+    background-color: aqua;
+    width: 50%;
+}
+.flex-container .content .right-column {
+    background-color: aquamarine;
+    width: 50%;
 }
