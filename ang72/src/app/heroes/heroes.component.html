@@ -1,8 +1,18 @@
-<h2>{{hero.name | uppercase}} Details</h2>
-<div><span>id:</span> {{hero.id}}</div>
+<div class="container">
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div><span>id:</span> {{hero.id}}</div>
 
-<div>
-  <label for="details">Name:
-    <input [(ngModel)]="hero.name" type="text">
-  </label>
+  <div>
+    <label for="details">Name:
+      <input [(ngModel)]="hero.name" type="text">
+    </label>
+  </div>
+  <br>
+  <br>
+  <h2>My heroes:</h2>
+  <mat-selection-list>
+    <mat-list-option *ngFor="let h of heroes">{{h.name}}</mat-list-option>
+  </mat-selection-list>
+  <button mat-raised-button color="primary">Test</button>
 </div>
+
