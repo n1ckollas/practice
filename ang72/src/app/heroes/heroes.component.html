@@ -1,18 +1,19 @@
 <div class="container">
-  <h2>{{hero.name | uppercase}} Details</h2>
-  <div><span>id:</span> {{hero.id}}</div>
+  <div *ngIf="selectedHero">
+    <h2>{{selectedHero.name | uppercase}} Details</h2>
+    <div><span>id:</span> {{hero.id}}</div>
 
-  <div>
-    <label for="details">Name:
-      <input [(ngModel)]="hero.name" type="text">
-    </label>
-  </div>
-  <br>
-  <br>
-  <h2>My heroes:</h2>
+    <div>
+      <label for="details">Name:
+        <input [(ngModel)]="selectedHero.name" type="text">
+      </label>
+    </div>
+    </div>
+    
+    <br>
+    <h2>My heroes:</h2>
   <mat-selection-list>
-    <mat-list-option *ngFor="let h of heroes">{{h.name}}</mat-list-option>
+    <mat-list-option [class.selected]="hero === selectedHero" *ngFor="let h of heroes" (click)="onSelectHero(h)">{{h.name}}</mat-list-option>
   </mat-selection-list>
   <button mat-raised-button color="primary">Test</button>
 </div>
-
