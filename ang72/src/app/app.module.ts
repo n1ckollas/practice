@@ -7,6 +7,8 @@ import { MaterialModule } from './material.module';
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { MessagesComponent } from './messages/messages.component';
+// import { SnackBarComponent } from './snack-bar/snack-bar.component';
 import { HeroService } from './hero.service';
 
 @NgModule({
@@ -14,6 +16,8 @@ import { HeroService } from './hero.service';
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
+    MessagesComponent,
+    // SnackBarComponent,
   ],
   imports: [
     BrowserModule,

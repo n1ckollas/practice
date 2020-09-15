@@ -1,16 +1,13 @@
-<div class="container">
-  <app-hero-detail [hero]="selectedHero"></app-hero-detail>    
-    <br>
-    <br>
-    <h2>My heroes:</h2>
-  <mat-selection-list>
-    <mat-list-option
-      *ngFor="let h of heroes" 
-      [class.selected]="h === selectedHero" 
-      [selected]="h === selectedHero"
-      (click)="onSelectHero(h)">
-      {{h.name}}
-    </mat-list-option>
-  </mat-selection-list>
-  <button mat-raised-button color="primary">Test</button>
-</div>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>    
+  <br>
+  <br>
+  <h2>My heroes:</h2>
+<mat-selection-list>
+  <mat-list-option
+    *ngFor="let h of heroes" 
+    [class.selected]="h === selectedHero" 
+    [selected]="h === selectedHero"
+    (click)="onSelectHero(h)">
+    {{h.name}}
+  </mat-list-option>
+</mat-selection-list>
