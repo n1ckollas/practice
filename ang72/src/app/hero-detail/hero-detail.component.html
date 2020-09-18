@@ -1,12 +1,12 @@
 <button mat-raised-button color="accent" (click)="goBack()">Go back</button>
 <br>
 <div *ngIf="hero">
-    <h2>{{hero.name | uppercase}} Details</h2>
-    <div><span>id:</span> {{hero.id}}</div>
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div><span>id:</span> {{hero.id}}</div>
 
-    <div>
-      <label for="details">Name:
-        <input [(ngModel)]="hero.name" type="text">
-      </label>
-    </div>
+  <div>
+    <label for="details">Name:
+      <input [(ngModel)]="hero.name" type="text">
+    </label>
   </div>
+</div>
