@@ -1,13 +1,12 @@
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>    
-  <br>
-  <br>
-  <h2>My heroes:</h2>
+<br>
+<h2>My heroes:</h2>
 <mat-selection-list>
   <mat-list-option
     *ngFor="let h of heroes" 
     [class.selected]="h === selectedHero" 
-    [selected]="h === selectedHero"
-    (click)="onSelectHero(h)">
-    {{h.name}}
+    [selected]="h === selectedHero">
+    <a routerLink="/detail/{{h.id}}">
+      {{h.name}}
+    </a>
   </mat-list-option>
 </mat-selection-list>
