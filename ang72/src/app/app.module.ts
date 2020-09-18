@@ -11,6 +11,8 @@ import { MessagesComponent } from './messages/messages.component';
 // import { SnackBarComponent } from './snack-bar/snack-bar.component';
 import { HeroService } from './hero.service';
 import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    // SnackBarComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

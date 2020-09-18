@@ -11,7 +11,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(private heroService: HeroService) { }
 
-  heros: Hero[] = [];
+  heroes: Hero[] = [];
 
   ngOnInit() {
     this.getHeroes();
@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
 
   getHeroes(): void {
     this.heroService.getHeros().subscribe(heros => {
-      this.heros = heros;
+      this.heroes = heros;
     })
   }
 
