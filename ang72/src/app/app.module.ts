@@ -13,6 +13,8 @@ import { HeroService } from './hero.service';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpClientModule } from "@angular/common/http";
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from "./inmemorydata.service"
 
 
 @NgModule({
@@ -30,6 +32,9 @@ import { HttpClientModule } from "@angular/common/http";
     MaterialModule,
     AppRoutingModule,
     HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, {dataEncapsulation: false}
+    )
   ],
   providers: [HeroService],
   bootstrap: [AppComponent]
