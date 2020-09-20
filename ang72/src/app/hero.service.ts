@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Hero } from './types/hero.type';
-import { HEROES } from './types/mock-heros';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
