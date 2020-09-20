@@ -41,13 +41,21 @@ export class HeroService {
     
   }
 
-  getHero(id: number){
-    this.messageService.add("HeroService: fetching hero with id" + id);
-    const url = this.heroUrl + '/' + id;
-
-    return this.http.get<Hero>(this.heroUrl).pipe(
-      tap(_ => this.log(`fetched hero id = ${id}`)),
+  getHero(id: number): Observable<Hero> {
+    const url = `${this.heroUrl}/${id}`;
+    return this.http.get<Hero>(url).pipe(
+      tap(_ => this.log(`fetched hero id=${id}`)),
       catchError(this.handleError<Hero>(`getHero id=${id}`))
+    );
+  }
+
+  updateHero(hero:Hero){
+    const httpOptions = {
+      headers: new HttpHeaders({'Content-Type' : 'application/json'})
+    }
+    return this.http.put(this.heroUrl, hero, httpOptions).pipe(
+      tap( _ => this.log(`updated hero id=${hero.id}`)),
+      catchError(this.handleError<any>('updateHero'))
     )
   }
 }
