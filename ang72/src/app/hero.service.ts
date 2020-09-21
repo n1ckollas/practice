@@ -7,6 +7,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
 import { isDataSource } from '@angular/cdk/collections';
 
+const httpOptions = {
+  headers: new HttpHeaders({'Content-Type' : 'application/json'})
+}
+
 
 @Injectable({
   providedIn: 'root'
@@ -50,12 +54,16 @@ export class HeroService {
   }
 
   updateHero(hero:Hero){
-    const httpOptions = {
-      headers: new HttpHeaders({'Content-Type' : 'application/json'})
-    }
     return this.http.put(this.heroUrl, hero, httpOptions).pipe(
       tap( _ => this.log(`updated hero id=${hero.id}`)),
       catchError(this.handleError<any>('updateHero'))
+    )
+  }
+
+  addHero(hero:Hero): Observable<Hero>{
+    return this.http.post<Hero>(this.heroUrl, hero, httpOptions).pipe(
+      tap((newHero: Hero) => this.log(`Added a new hero with id=${hero.id}`)),
+      catchError(this.handleError<Hero>('addHero'))
     )
   }
 }

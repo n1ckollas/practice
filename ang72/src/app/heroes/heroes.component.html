@@ -1,12 +1,30 @@
 <br>
+<h2>Add a Hero</h2>
+
+<mat-form-field>
+  <mat-label>Add hero:</mat-label>
+  <input matInput #heroName />
+</mat-form-field>
+
+ <button mat-raised-button color="primary" 
+   (click)="add(heroName.value); heroName.value=''">
+   Add
+  </button>
+
 <h2>My heroes:</h2>
 <mat-selection-list>
   <mat-list-option
     *ngFor="let h of heroes" 
     [class.selected]="h === selectedHero" 
     [selected]="h === selectedHero">
-    <a routerLink="/detail/{{h.id}}">
-      {{h.name}}
-    </a>
+    <div class="span-list">
+        <a class="inline" routerLink="/detail/{{h.id}}">
+          {{h.name}}
+        </a>
+        <button mat-raised-button class="inline"
+          (click)="delete(h)" color="warn">
+          Delete
+        </button>
+    </div>
   </mat-list-option>
 </mat-selection-list>
