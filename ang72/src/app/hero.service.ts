@@ -76,4 +76,5 @@ export class HeroService {
       catchError(this.handleError<Hero[]>('Search Heroes', []))
     );
   }
+  
 }
