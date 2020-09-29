@@ -11,3 +11,12 @@
     </li>
   </ul>
 </div>
+
+<div class="hero-name">
+  <label for="hero">Hero Name:
+    <input type="text" #heroName />
+  </label>
+  <button (click)="addHero(heroName.value); heroName.value=''">
+    Add
+  </button>
+</div>
