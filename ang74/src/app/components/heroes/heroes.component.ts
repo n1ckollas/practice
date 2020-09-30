@@ -27,4 +27,8 @@ export class HeroesComponent implements OnInit {
     this.selectedHero = hero;
   }
 
+  alertChange(event){
+    console.log(event);
+  }
+
 }
