@@ -44,12 +44,13 @@
         <button onClick="submitEmail()" id="newsSignUpButton">Sign Up</button>
     </div>
     <script>
-        var input = document.getElementById('newsSignUpButton');
+        var input = document.getElementById('input');
 
         function submitEmail(){
-            fetch('https://jsonplaceholder.typicode.com/todos')
-                .then(response => response.json())
-                .then(json => console.log(json))
+            // fetch('https://jsonplaceholder.typicode.com/todos')
+            //     .then(response => response.json())
+            //     .then(json => console.log(json))
+            console.log(input.value)
         }
         
 
@@ -67,6 +68,7 @@
             props:['todo'],
             template:'<li>{{todo.descr}}</li>'
         })
+
         var app5 = new Vue({
            el: '#app5',
            data:{
