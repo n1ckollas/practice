@@ -29,7 +29,40 @@
     <div id="app5">
         <input type="text" v-model="inputData" v-on:keyDown="dataChange($event)">
     </div>
+    <br>
+    <div id="pop-up">
+        <div id="tool-tip">
+            This is a popup.
+        </div>
+        <button id="controlButton" onClick="showHide()">Hide</button>
+    </div>
+    <br>
+    <br>
+    <div id="newsletter">
+        <h2>Sign up for our news letter.</h2> 
+        <input type="text" id="input">
+        <button onClick="submitEmail()" id="newsSignUpButton">Sign Up</button>
+    </div>
     <script>
+        var input = document.getElementById('newsSignUpButton');
+
+        function submitEmail(){
+            fetch('https://jsonplaceholder.typicode.com/todos')
+                .then(response => response.json())
+                .then(json => console.log(json))
+        }
+        
+
+        var isVisible = true;
+        function showHide(){
+            var toolTip = document.getElementById('tool-tip');
+            var button = document.getElementById('controlButton');
+
+            toolTip.style.visibility = isVisible === true ? 'hidden' : 'visible';
+            button.innerText = isVisible === true ? 'Show' : 'Hide';
+            isVisible = !isVisible;
+        }
+
         Vue.component('todo-item', {
             props:['todo'],
             template:'<li>{{todo.descr}}</li>'
