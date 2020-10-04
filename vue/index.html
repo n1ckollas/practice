@@ -8,12 +8,40 @@
         <h2>{{greeting}}</h2>
         <h3>{{name}}</h3>
     </div>
+
+    <div id="app2">
+        <span v-bind:title="title">
+            Hover over me!!
+        </span>
+    </div>
+
+    <div id="app3">
+        <div v-if="isvisible">Now you see me!</div> 
+        <button v-on:click="change()">Change</button>
+    </div>
     <script>
+        var app = new Vue({
+            el:'#app3',
+            data:{
+                isvisible: false
+            },
+            methods:{
+                change: function(){
+                    this.isvisible = !this.isvisible;
+                }
+            }
+        })
         var app = new Vue({
             el:'#app',
             data:{
                 name:'tada',
                 greeting:"Hello World"
+            }
+        })
+        var app2 = new Vue({
+            el:'#app2',
+            data:{
+                title:"You've loaded thid page on : " + new Date().toLocaleDateString(),
             }
         })
     </script>
