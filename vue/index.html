@@ -22,7 +22,7 @@
 
     <div id="app4">
         <ul>
-            <li v-for="t in todos">{{t.descr}}</li>
+            <todo-item v-for="t in todos" v-bind:key="t.descr" v-bind:todo="t"><todo-item>
         </ul>
     </div>
 
@@ -30,6 +30,10 @@
         <input type="text" v-model="inputData" v-on:keyDown="dataChange($event)">
     </div>
     <script>
+        Vue.component('todo-item', {
+            props:['todo'],
+            template:'<li>{{todo.descr}}</li>'
+        })
         var app5 = new Vue({
            el: '#app5',
            data:{
@@ -45,11 +49,11 @@
             el: '#app4',
             data:{
                 todos:[
-                    {name:"todo", descr:"Program Vue js"},
-                    {name:"todo", descr:"Talk to Jordyn"},
-                    {name:"todo", descr:"Talk to Mom"},
-                    {name:"todo", descr:"Talk to Papa"},
-                    {name:"todo", descr:"Talk to Steven"},
+                    {name:"todo0", descr:"Program Vue js"},
+                    {name:"todo1", descr:"Talk to Jordyn"},
+                    {name:"todo2", descr:"Talk to Mom"},
+                    {name:"todo3", descr:"Talk to Papa"},
+                    {name:"todo4", descr:"Talk to Steven"},
                 ]
             }
         })
