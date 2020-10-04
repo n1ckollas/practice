@@ -19,8 +19,26 @@
         <div v-if="isvisible">Now you see me!</div> 
         <button v-on:click="change()">Change</button>
     </div>
+
+    <div id="app4">
+        <ul>
+            <li v-for="t in todos">{{t.descr}}</li>
+        </ul>
+    </div>
     <script>
-        var app = new Vue({
+        var app4 = new Vue({
+            el: '#app4',
+            data:{
+                todos:[
+                    {name:"todo", descr:"Program Vue js"},
+                    {name:"todo", descr:"Talk to Jordyn"},
+                    {name:"todo", descr:"Talk to Mom"},
+                    {name:"todo", descr:"Talk to Papa"},
+                    {name:"todo", descr:"Talk to Steven"},
+                ]
+            }
+        })
+        var app3 = new Vue({
             el:'#app3',
             data:{
                 isvisible: false
