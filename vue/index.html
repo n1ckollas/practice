@@ -25,7 +25,22 @@
             <li v-for="t in todos">{{t.descr}}</li>
         </ul>
     </div>
+
+    <div id="app5">
+        <input type="text" v-model="inputData" v-on:keyDown="dataChange($event)">
+    </div>
     <script>
+        var app5 = new Vue({
+           el: '#app5',
+           data:{
+               inputData:'Hello World',
+           },
+           methods:{
+               dataChange: function(event){
+                   console.log(event);
+               }
+           }
+        })
         var app4 = new Vue({
             el: '#app4',
             data:{
