@@ -71,6 +71,16 @@ export class HeroService {
     )
   }
 
+  searchHeroes(term: string): Observable<Hero[]>{
+    if(!term.trim()){
+      return of([]);
+    }
+    return this.httpClient.get<Hero[]>(`${this.heroUrl}/?name=${term}`).pipe(
+      tap(_ => this.log(`Fethced Hero  with id`)),
+      catchError(this.handlError<Hero[]>("Failed to fethc given hero"))
+    ) 
+  }
+
   
 
 }
