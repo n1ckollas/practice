@@ -5,7 +5,7 @@
 
   <div class="hero-edit">
     <label for="">Edit Hero Name
-      <input type="text" [(ngModel)]="hero.name" />
+      <input type="text" [(ngModel)]="hero.name" (input)="newName()" />
     </label>
   </div>
 </div>
