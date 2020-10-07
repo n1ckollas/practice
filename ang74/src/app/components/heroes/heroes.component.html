@@ -2,13 +2,15 @@
   <h2>My Heroes</h2>
   <ul class="heroes">
     <li *ngFor="let hero of heroes"
-      routerLink="/detail/{{hero.id}}"
-     (click)="onSelect(hero)"
      [class.selected]="hero === selectedHero"
      >
+     <div class="inline" routerLink="/detail/{{hero.id}}" (click)="onSelect(hero)">
       <span class="badge">{{hero.id}}</span>
       {{hero.name}}
-      <span (click)="deleteHero(hero)" class="badge">X</span>
+     </div>
+     <div class="inline" (click)="deleteHero(hero)">
+      <span>Delete</span>
+     </div>
     </li>
   </ul>
   <br>
