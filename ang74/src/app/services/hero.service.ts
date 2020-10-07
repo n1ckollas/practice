@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 import { Hero } from '../types/hero.type';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap} from 'rxjs/operators';
-
 
 
 @Injectable({
@@ -13,6 +12,9 @@ import { catchError, map, tap} from 'rxjs/operators';
 
 export class HeroService {
   heroUrl = "api/heroes";
+  httpOptions = {
+    headers: new HttpHeaders({'Content-Type' : 'application/json'})
+  }
 
   constructor(
     private messageService: MessageService,
@@ -45,4 +47,21 @@ export class HeroService {
       catchError(this.handlError<Hero>("Failed to fethc given hero"))
     )
   }
+
+  updateHero(hero : Hero): Observable<any> {
+    return this.httpClient.put<Hero>(this.heroUrl, hero, this.httpOptions).pipe(
+      tap(_ => this.log("HERO Service, Hero updated")),
+      catchError(this.handlError<Hero>('Did not update the hero' ))
+    )
+  }
+
+  addHero(hero: Hero): Observable<Hero> {
+   return this.httpClient.post<Hero>(this.heroUrl, hero, this.httpOptions).pipe(
+     tap( (newHero: Hero) => this.log(`Hero Service Add Hero => ${newHero}`)),
+     catchError( this.handlError<Hero>("Did not create given Hero"))
+   )
+  }
+
+  
+
 }

@@ -9,4 +9,14 @@
       <span class="badge">{{hero.id}}</span>
       {{hero.name}}</li>
   </ul>
+  <br>
+  <br>
+
+  <h2>Add a Hero</h2>
+  <label>Hero Name:
+    <input type="text" #heroName />
+  </label>
+  <button (click)="add(heroName.value); heroName.value = ''">
+    Add Hero
+  </button>
 </div>
