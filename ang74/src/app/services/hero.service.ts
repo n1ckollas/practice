@@ -61,7 +61,14 @@ export class HeroService {
      catchError( this.handlError<Hero>("Did not create given Hero"))
    )
   }
-
   
+  deleteHero(hero: Hero | number): Observable<Hero>{
+    const id = typeof hero === 'number'? hero : hero.id;
+    const url = `${this.heroUrl}/${id}`;
+    return this.httpClient.delete<Hero>(url, this.httpOptions).pipe(
+      tap(_ => this.log('Hero Service: Hero deleted')),
+      catchError(this.handlError<Hero>('Hero Was NOT Deleted'))
+    )
+  }
 
 }
