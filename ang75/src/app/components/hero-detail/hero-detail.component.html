@@ -1,3 +1,11 @@
-<p>
-  hero-detail works!
-</p>
+<div *ngIf="hero">
+  <h2>{{hero.name | uppercase}}'s Details</h2>
+  <p><span>id:</span> {{hero.id}}</p>
+  <p><span>name:</span> {{hero.name}}</p>
+
+  <div class="hero-edit">
+    <label for="">Edit Hero Name
+      <input type="text" [(ngModel)]="hero.name" />
+    </label>
+  </div>
+</div>

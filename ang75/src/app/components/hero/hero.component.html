@@ -1,17 +1,7 @@
-<div *ngIf="selectedHero">
-  <h2>{{selectedHero.name | uppercase}}'s Details</h2>
-  <p><span>id:</span> {{selectedHero.id}}</p>
-  <p><span>name:</span> {{selectedHero.name}}</p>
-
-  <div class="hero-edit">
-    <label for="">Edit Hero Name
-      <input type="text" [(ngModel)]="selectedHero.name" />
-    </label>
-  </div>
-</div>
-
-
 <h2>My heroes</h2>
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
 <ul class="heroes">
   <li *ngFor="let hero of heroes" 
   [class.selected] = "hero === selectedHero"
