@@ -18,6 +18,6 @@ export class HeroService {
   }
 
   getHero(hero: Hero): Hero {
-    return HEROES.find(h => h.id = hero.id);
+    return HEROES.find(h => h.id === hero.id);
   }
 }
