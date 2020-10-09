@@ -26,4 +26,8 @@ export class InMemoryDataServiceService {
     ];
     return {heroes};
   }
+
+  genId(heroes: Hero[]) {
+    return heroes.length > 0 ? Math.max( ...heroes.map(hero => hero.id)) + 1: 11;
+  }
 }
