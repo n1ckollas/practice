@@ -22,4 +22,8 @@ export class HeroesComponent implements OnInit {
     this.selectedHero = hero;
   }
 
+  nameChange(value){
+    console.log(value);
+  }
+
 }
