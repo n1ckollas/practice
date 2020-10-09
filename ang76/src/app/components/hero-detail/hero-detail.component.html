@@ -1,9 +1,11 @@
-<div *ngIf="hero">
-    <h2>{{hero.name | uppercase}}'s details</h2>
-    <p><span>id: </span>{{hero.id}}</p>
-    <p><span>name: </span>{{hero.name}}</p>
-    <div>
-        <h3>Edit Hero:</h3>
+<div class="card" *ngIf="hero">
+    <div class="card-header">
+        <h5 class="card-title">{{hero.name | uppercase}}'s details</h5>
+        <h6 class="card-subtitle"><span>id: </span>{{hero.id}}</h6>
+        <h6 class="card-subtitle"><span>name: </span>{{hero.name}}</h6>
+    </div>
+    <div class="card-body">
+        <h6 class="card-subtitle">Edit Hero:</h6>
         <label for="">Hero Name:
             <input type="text" [(ngModel)]="hero.name" (input)="onInput()" />
         </label>
