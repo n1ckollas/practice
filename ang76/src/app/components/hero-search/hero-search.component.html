@@ -5,8 +5,8 @@
       <div class="input-group-prepend">
         <span class="input-group-text">Search:</span>
       </div>
+      <input #searchBox (input)="search(searchBox.value)" />
     </div>
-    <input #searchBox (input)="search(searchBox.value)" />
     <ul class="list-group">
       <li class="list-group-item"
         *ngFor="let hero of heroes$ | async">
