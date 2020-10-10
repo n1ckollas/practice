@@ -4,9 +4,33 @@
         (click)="onSelect(hero)"
         class="list-group-item"
         [class.active]="hero === selectedHero"
-        routerLink="/detail/{{hero.id}}"
     >
-        <span class="badge">{{hero.id}}</span>
-        {{hero.name}}
+        <a routerLink="/detail/{{hero.id}}">
+            <span class="badge badge-primary badge-pill">{{hero.id}}</span>        
+            {{hero.name}}
+        </a>
+        <button class="btn btn-danger" (click)="delete(hero)">Delete</button>
     </li>
 </ul>
+<br><br><br><br>
+<div class="card">
+    <div class="card-header">
+        <h5>Add a Hero</h5>
+    </div>
+    <div class="card-body">
+        <div class="input-group">
+            <div class="input-group-prepend">
+               <span class="input-group-text">
+                    Hero Name:
+               </span> 
+            </div>
+            <input type="text" #heroName>
+            <div class="input-group-append">
+                <button class="btn btn-primary" 
+                (click)="add(heroName.value); heroName.value=''">
+                    Add
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

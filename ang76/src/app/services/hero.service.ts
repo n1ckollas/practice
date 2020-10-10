@@ -53,6 +53,20 @@ export class HeroService {
       catchError(this.handlError<Hero>('Update Failed'))
     )
   }
-  
 
+  addHero(hero: Hero): Observable<Hero>{
+    return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions).pipe(
+      tap((newHero: Hero) => this.log(`Added a new hero => ${newHero.name}`)),
+      catchError(this.handlError<Hero>('Failed to create a hero'))
+    )
+  }
+
+  deleteHero(hero: Hero | number): Observable<Hero> {
+    const id =  typeof hero  === 'number' ? hero : hero.id;
+    const url = `${this.heroesUrl}/${id}`;
+    return this.http.delete<Hero>(url, this.httpOptions).pipe(
+      tap( _ => this.log("DELETED the hero")),
+      catchError(this.handlError<Hero>("Failed to Delete"))
+    )
+  }
 }
