@@ -1,5 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/heroes">Heroes</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+  </li>
+</ul>
 <div class="container">
-  <app-heroes></app-heroes>
+  <router-outlet></router-outlet>
   <app-messages></app-messages>
 </div>
