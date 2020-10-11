@@ -33,6 +33,10 @@ export class HeroDetailsComponent implements OnInit {
     this.heroService.getHero(id).subscribe(hero => this.hero = hero);
   }
 
+  save(hero: Hero): void {
+    this.heroService.updateHero(hero).subscribe(() => this.back());
+  }
+
   back(): void{
     this.location.back();
   }
