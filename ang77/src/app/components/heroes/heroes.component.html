@@ -1,10 +1,11 @@
-<app-hero-details [hero]="selectedHero" (nameChange)="nameChange($event)"></app-hero-details>
 <br><br>
 <ul class="list-group">
   <li *ngFor="let hero of heroes" 
     (click)="onSelect(hero)"
     [class.active]="hero === selectedHero"
-    class="list-group-item">
+    class="list-group-item"
+    routerLink="/detail/{{hero.id}}"
+    >
     <span class="badge badge-secondary">
       {{hero.id}}      
     </span>

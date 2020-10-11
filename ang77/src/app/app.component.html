@@ -1,9 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/heroes">Heroes</a>
+  </li>
+  <li class="nav-item">
+      <a class="nav-link" routerLink="/dashboard">Dashboard</a>
+    </li>
+  </ul>
 <div class="container">
   <router-outlet></router-outlet>
   <app-messages></app-messages>
