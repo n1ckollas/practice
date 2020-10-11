@@ -1,22 +1,5 @@
-<div class="card" *ngIf="selectedHero">
-  <div class="card-header">
-    <h5>{{selectedHero.name | uppercase}}'s details</h5>
-    <h6><span>id:</span> {{selectedHero.id}}</h6>
-    <h6><span>name:</span> {{selectedHero.name}}</h6>
-  </div>
-  <div class="card-body">
-    <h6>Edit Heroe's details</h6>
-    <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text">Name:</span>
-      </div>
-      <input type="text" class="form-control" [(ngModel)]="selectedHero.name">
-    </div>
-  </div>
-</div>
-
+<app-hero-details [hero]="selectedHero"></app-hero-details>
 <br><br>
-
 <ul class="list-group">
   <li *ngFor="let hero of heroes" 
     (click)="onSelect(hero)"
