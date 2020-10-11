@@ -61,4 +61,14 @@ export class HeroService {
         catchError(this.handlError<Hero>("CREATE Failded"))
     )
   }
+
+  deleteHero(hero: Hero | number): Observable<any>{
+    const id = typeof hero === 'number' ? hero : hero.id;
+    const url = `${this.heroesUrl}/${id}}`;
+
+    return this.http.delete<Hero>(url, this.httpOptions).pipe(
+      tap(_ => this.log("Hero Delete Success")),
+      catchError(this.handlError<any>('Delete Fail'))
+    )
+  }
 }
