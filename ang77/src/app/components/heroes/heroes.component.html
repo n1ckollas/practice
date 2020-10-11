@@ -1,4 +1,4 @@
-<app-hero-details [hero]="selectedHero"></app-hero-details>
+<app-hero-details [hero]="selectedHero" (nameChange)="nameChange($event)"></app-hero-details>
 <br><br>
 <ul class="list-group">
   <li *ngFor="let hero of heroes" 
