@@ -22,5 +22,4 @@ export class HeroService {
     this.messageService.add("Fetched a single Hero");
     return of(HEROES.find(h => h.id === id));
   }
-
 }
