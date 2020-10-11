@@ -54,4 +54,11 @@ export class HeroService {
       catchError(this.handlError<Hero>("Update Failded"))
     )
   }
+
+  createHero(hero: Hero): Observable<Hero> {
+    return this.http.post<Hero>(this.heroesUrl, hero, this.httpOptions).pipe(
+        tap((newHero: Hero) => this.log(`Hero Created ${newHero.name}`)),
+        catchError(this.handlError<Hero>("CREATE Failded"))
+    )
+  }
 }

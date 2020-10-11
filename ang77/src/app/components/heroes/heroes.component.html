@@ -12,3 +12,21 @@
     {{hero.name}}      
   </li>
 </ul>
+
+<br><br>
+<div class="card">
+  <div class="card-header">
+    Add a new hero.
+  </div>
+  <div class="card-body">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Name:</span>  
+      </div>
+      <input type="text" #heroName>
+      <div class="input-group-append">
+        <button (click)="addHero(heroName.value); heroName.value=''" class="btn btn-success">Add</button>
+      </div>
+    </div>
+  </div>
+</div>
