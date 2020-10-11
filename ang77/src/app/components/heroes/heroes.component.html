@@ -1,0 +1,16 @@
+<div class="card">
+  <div class="card-header">
+    <h5>{{hero.name}}'s details</h5>
+    <h6><span>id:</span> {{hero.id}}</h6>
+    <h6><span>name:</span> {{hero.name}}</h6>
+  </div>
+  <div class="card-body">
+    <h6>Edit Heroe's details</h6>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Name:</span>
+      </div>
+      <input type="text" class="form-control" [(ngModel)]="hero.name">
+    </div>
+  </div>
+</div>
