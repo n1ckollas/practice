@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-header">
-    <h5>{{hero.name}}'s details</h5>
+    <h5>{{hero.name | uppercase}}'s details</h5>
     <h6><span>id:</span> {{hero.id}}</h6>
     <h6><span>name:</span> {{hero.name}}</h6>
   </div>
@@ -14,3 +14,14 @@
     </div>
   </div>
 </div>
+
+<br><br>
+
+<ul class="list-group">
+  <li *ngFor="let hero of heroes" class="list-group-item">
+    <span class="badge badge-secondary">
+      {{hero.id}}      
+    </span>
+    {{hero.name}}      
+  </li>
+</ul>
