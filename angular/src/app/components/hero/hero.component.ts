@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HEROES } from 'src/app/types/mock-heroes';
 import { Hero } from '../../types/hero.type';
 
 
@@ -11,6 +12,7 @@ export class HeroComponent implements OnInit {
 
   hero: Hero = {name:"windstorm", id: 33 }
 
+  heroes = HEROES;
   constructor() { }
 
   ngOnInit() {
