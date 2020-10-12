@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Hero } from 'src/app/types/hero.type';
 
 @Component({
@@ -8,10 +8,15 @@ import { Hero } from 'src/app/types/hero.type';
 })
 export class HeroDetailComponent implements OnInit {
   @Input() hero: Hero;
-  
+  @Output() nameChange: EventEmitter<string> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onNameChange(): void{
+    this.nameChange.emit(this.hero.name);
   }
 
 }
