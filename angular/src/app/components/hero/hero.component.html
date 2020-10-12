@@ -1,8 +1,8 @@
-<div class="card">
+<div class="card" *ngIf="selectedHero">
   <div class="card-header">
-    <h5>{{hero.name | uppercase}}'s details:</h5>
-    <h6><span class="badge badge-secondary">id:</span> {{hero.id}}</h6>
-    <h6><span class="badge badge-secondary">name:</span> {{hero.name}}</h6>
+    <h5>{{selectedHero.name | uppercase}}'s details:</h5>
+    <h6><span class="badge badge-secondary">id:</span> {{selectedHero.id}}</h6>
+    <h6><span class="badge badge-secondary">name:</span> {{selectedHero.name}}</h6>
   </div>
   <div class="card-body">
     <h5>Edit Hero's name:</h5>
@@ -10,7 +10,7 @@
       <div class="input-group-prepend">
         <span class="input-group-text">Name:</span>
       </div>
-      <input type="text" [(ngModel)]="hero.name">
+      <input type="text" [(ngModel)]="selectedHero.name">
     </div>
   </div>
 </div>
@@ -23,7 +23,14 @@
   </div>
   <div class="card-body">
     <ul class="list-group list-group-flush">
-      <li class="list-group-item" *ngFor="let hero of heroes">{{hero.name}}</li>
+      <li class="list-group-item list-group-item-action" 
+        (click)="onHeroSelect(hero)"
+        *ngFor="let hero of heroes"
+        [class.active]="hero === selectedHero"
+        >
+        <span class="badge badge-secondary">{{hero.id}}</span>
+        {{hero.name}}
+      </li>
     </ul>
   </div>
 </div>
