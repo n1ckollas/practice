@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroService } from 'src/app/services/hero.service';
-import { HEROES } from 'src/app/types/mock-heroes';
 import { Hero } from '../../types/hero.type';
 
 
@@ -33,6 +32,12 @@ export class HeroComponent implements OnInit {
 
   delete(hero): void {
     console.log(hero);
+  }
+
+  addHero(name: string): void{
+    this.heroService.createHero({name} as Hero).subscribe(newHero =>{
+      this.heroes.push(newHero);
+    });
   }
 
 }

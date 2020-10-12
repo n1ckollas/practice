@@ -18,5 +18,20 @@
       </li>
     </ul>
   </div>
+  <div class="card-footer">
+    <h6>Add a Hero</h6>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Name:</span>
+      </div>
+      <input #heroName>
+      <div class="input-group-append">
+        <button class="btn btn-success" 
+          (click)="addHero(heroName.value); heroName.value=''">
+          Add Hero
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 
