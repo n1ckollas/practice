@@ -31,4 +31,8 @@ export class HeroComponent implements OnInit {
     this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
 
+  delete(hero): void {
+    console.log(hero);
+  }
+
 }

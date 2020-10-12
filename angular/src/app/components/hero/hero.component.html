@@ -1,6 +1,3 @@
-<app-hero-detail [hero]="selectedHero" (nameChange)="logName($event)"></app-hero-detail>
-<br><br>
-
 <div class="card">
   <div class="card-header">
     My Heroes
@@ -12,8 +9,11 @@
         *ngFor="let hero of heroes"
         [class.active]="hero === selectedHero"
         >
-        <span class="badge badge-secondary">{{hero.id}}</span>
-        {{hero.name}}
+        <a routerLink="/detail/{{hero.id}}">
+          <span class="badge badge-secondary">{{hero.id}}</span>
+          {{hero.name}}
+        </a>
+        <button (click)="delete(hero)" class="btn btn-danger">Delete</button>
       </li>
     </ul>
   </div>
