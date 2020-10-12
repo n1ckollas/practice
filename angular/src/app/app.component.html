@@ -1,9 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
-
-<app-hero></app-hero>
+<ul class="nav">
+  <li class="nav-item">
+    <a routerLink="/heroes" class="nav-link" routerLinkActve="active">Heroes</a>
+  </li>
+</ul>
+<router-outlet></router-outlet>
 <app-messages></app-messages>
