@@ -8,8 +8,9 @@ import { Hero } from '../../types/hero.type';
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
-  hero: Hero = {name:"wind", id:1};
   
+  hero: Hero = { name:"wind", id:1 };
+
   constructor() { }
 
   ngOnInit() {
