@@ -1,0 +1,8 @@
+.color-fill {
+    background-color: blue;
+    color: white;
+    font-size: 14px;
+    line-height: 80px;
+    height: 80px;
+    border: 2px solid black;
+}
