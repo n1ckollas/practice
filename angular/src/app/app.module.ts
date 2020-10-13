@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 import { MessagesComponent } from './components/messages/messages.component';
@@ -17,11 +18,13 @@ import { HeroSearchComponent } from './components/hero-search/hero-search.compon
 @NgModule({
   declarations: [
     AppComponent,
+    HeroesComponent
     HeroComponent,
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
     HeroSearchComponent
+
   ],
   imports: [
     BrowserModule,
