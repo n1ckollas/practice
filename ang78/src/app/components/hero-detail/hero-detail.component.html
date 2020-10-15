@@ -1,0 +1,15 @@
+<div class="card" *ngIf="hero">
+  <div class="card-header">
+    <h5>{{hero.name | uppercase}}'s details:</h5>
+    <h6><span class="badge badge-secondary">id:</span> {{hero.id}}</h6>
+    <h6><span class="badge badge-secondary">name:</span> {{hero.name}}</h6>
+  </div>
+  <div class="card-body">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">Name:</div>
+      </div>
+      <input [(ngModel)]="hero.name">
+    </div>
+  </div>
+</div>
