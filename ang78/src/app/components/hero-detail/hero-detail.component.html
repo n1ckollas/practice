@@ -9,7 +9,7 @@
       <div class="input-group-prepend">
         <div class="input-group-text">Name:</div>
       </div>
-      <input [(ngModel)]="hero.name">
+      <input [(ngModel)]="hero.name" (input)="onChange()">
     </div>
   </div>
 </div>
