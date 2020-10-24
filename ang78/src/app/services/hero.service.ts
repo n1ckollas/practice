@@ -21,7 +21,7 @@ export class HeroService {
   ) { }
 
   private log(message: string){
-    this.messageService.add(message);
+    this.messageService.add(`HERO SERVICE: ${message}`);
   }
 
   private handleError<T>(operation = 'operation', result?: T){
@@ -46,5 +46,42 @@ export class HeroService {
       catchError(this.handleError<Hero>("Failed to get a Hero"))
     )
   }
+
+  updateHero(hero: Hero): Observable<Hero> {
+    return this.http.put<Hero>(this.heroUrl, hero, this.httpOptions).pipe(
+      tap( _ => this.log(`Updated a hero`)),
+      catchError(this.handleError<Hero>("Failed to update a Hero"))
+    )
+  }
+
+  createHero(hero: Hero): Observable<Hero> {
+    return this.http.post<Hero>(this.heroUrl, hero, this.httpOptions).pipe(
+      tap( _ => this.log(`Create  a hero => ${hero.name}`)),
+      catchError(this.handleError<Hero>("Failed to create a Hero"))
+    )
+  }
+
+  deleteHero(hero: Hero): Observable<any> {
+    const id = typeof(hero) === 'number'? hero : hero.id;
+    const url = `${ this.heroUrl }/${id}`;
+
+    return this.http.delete<Hero>(url).pipe(
+      tap( _ => this.log(`Deleted a hero => ${hero.name}`)),
+      catchError(this.handleError<Hero>("Failed to delete a Hero"))
+    )
+  }
+
+  searchHeroes(term: string): Observable<Hero[]> {
+    if(!term.trim()){
+      return of([])
+    }
+    return this.http.get<Hero[]>(`${this.heroUrl}/?name=${term}`).pipe(
+      tap( _ => this.log(`Found heroes`)),
+      catchError(this.handleError<Hero[]>("Failed to Find a Hero"))
+    )
+  }
+
+
+
   
 }

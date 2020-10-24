@@ -9,11 +9,23 @@
         *ngFor="let hero of heroes"
         (click)="onSelect(hero)"
         [class.active]="selectedHero === hero"
-        routerLink="/detail/{{hero.id}}"
+        
         >
-        <span class="badge badge-secondary">{{hero.id}}</span>
-        {{hero.name}}
+        <span class="badge badge-secondary mr-2">{{hero.id}}</span>
+        <a routerLink="/detail/{{hero.id}}">{{hero.name}}</a>
+        <span class="badge badge-danger ml-2" (click)="deleteHero(hero)">X</span>
       </li>
     </ul>
+  </div>
+  <div class="card-footer">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Name:</span>
+      </div>
+      <input type="text" class="form-control" #heroName placeholder="Hero Name">
+      <div class="input-group-append">
+        <button class="btn btn-primary" (click)="saveHero(heroName.value); heroName.value=''">Add</button>
+      </div>
+    </div>
   </div>
 </div> 
