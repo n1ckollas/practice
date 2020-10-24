@@ -9,5 +9,8 @@
       </div>
       <input type="text" #searchTerm class="form-control" (input)="search(searchTerm.value)">
     </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item" *ngFor="let hero of heroes$ | async">{{hero.name}}</li>
+    </ul>
   </div>
 </div>
