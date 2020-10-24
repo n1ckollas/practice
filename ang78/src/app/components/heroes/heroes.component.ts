@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { HeroService } from 'src/app/services/hero.service';
 import { Hero } from '../../types/hero.type';
-import { HEROES } from '../../types/mock-heroes';
 
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
   styleUrls: ['./heroes.component.css']
 })
+
 export class HeroesComponent implements OnInit {
 
   hero: Hero = { name: 'windsor', id:33 };
