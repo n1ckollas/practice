@@ -1,19 +1,4 @@
-<div class="card" *ngIf="selectedHero">
-    <div class="card-header">
-        <h6>{{selectedHero.name | uppercase }}'s details:</h6>
-        <p><span class="badge badge-secondary">Id: </span> {{selectedHero.id}}</p>
-        <p><span class="badge badge-secondary">Name: </span> {{selectedHero.name}}</p>
-    </div>
-    <div class="card-body">
-        <h6>Edit Details: </h6>
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="basic-addon1">Name:</span>
-            </div>
-            <input type="text" class="form-control" [(ngModel)]="selectedHero.name">
-        </div>
-    </div>
-</div>
+<app-hero-details [hero]="selectedHero"></app-hero-details>
 <br><br>
 <div class="card">
     <div class="card-header">
