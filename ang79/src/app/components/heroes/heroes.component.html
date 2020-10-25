@@ -1,4 +1,3 @@
-<app-hero-details [hero]="selectedHero"></app-hero-details>
 <div class="card mb-2">
     <div class="card-header">
         <h6>My Heroes</h6>
@@ -9,9 +8,9 @@
                 *ngFor="let hero of heroes" 
                 (click)="onSelect(hero)"
                 [class.active]="selectedHero === hero">
-                <span class="badge badge-secondary">{{hero.id}}</span>
-                {{hero.name}}
-                <span class="badge badge-danger">X</span>
+                <span class="badge badge-secondary mr-2">{{hero.id}}</span>
+                <a routerLink="/detail/{{hero.id}}">{{hero.name}}</a>
+                <span class="badge badge-danger ml-2">X</span>
             </li>
         </ul>
     </div>
