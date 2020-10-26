@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HEROES } from 'src/app/types/mock-heroes';
 import { Hero } from '../../types/hero.type';
 
 
@@ -9,6 +10,7 @@ import { Hero } from '../../types/hero.type';
 })
 export class HeroesComponent implements OnInit {
   hero: Hero = { name:'wndstorm', id: 11};
+  heroes: Hero[] = HEROES;
   
   constructor() { }
 

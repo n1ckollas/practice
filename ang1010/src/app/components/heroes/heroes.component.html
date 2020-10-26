@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card mb-2 mt-2">
     <div class="card-header">
         <h5>{{hero.name | uppercase}}'s Details:</h5>
         <p>
@@ -17,5 +17,21 @@
             </div>
             <input type="text" class="form-control" [(ngModel)]="hero.name">
         </div>
+    </div>
+</div>
+
+<div class="card mb-2 mt-2">
+    <div class="card-header">
+        <h5>My Heroes:</h5>
+    </div>
+    <div class="card-body">
+        <ul class="list-group">
+            <li class="list-group-item" 
+                *ngFor="let hero of heroes">
+                <span class="badge badge-secondary">{{hero.id}}</span>
+                {{hero.name}}
+                <span class="badge badge-danger float-right pointer">X</span>
+            </li>
+        </ul>
     </div>
 </div>
