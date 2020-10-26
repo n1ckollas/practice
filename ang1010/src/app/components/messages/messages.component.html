@@ -1,0 +1,12 @@
+<div class="card mb-2 mt-2" *ngIf="messageService.messages.length > 0">
+    <div class="card-header">
+        <h6>Messages</h6>
+    </div>
+    <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let m of messageService.messages">
+               {{m}} 
+            </li>
+        </ul>
+    </div>
+</div>
