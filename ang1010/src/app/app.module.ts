@@ -6,7 +6,7 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 import { FormsModule } from '@angular/forms';
 import { HeroDetailsComponent } from './components/hero-details/hero-details.component';
 import { MessagesComponent } from './components/messages/messages.component';
-import { AppRoutingModule } from './routing.modile';
+import { AppRoutingModule } from './routing.module';
 
 @NgModule({
   declarations: [
