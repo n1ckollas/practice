@@ -15,3 +15,19 @@
         </ul>
     </div>
 </div>
+<div class="card mb-2">
+    <div class="card-header">
+        <h6>Add Hero</h6>
+    </div>
+    <div class="card-body">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Name:</span>
+            </div>
+            <input type="text" class="form-control" #heroName>
+            <div class="input-group-append">
+                <button class="btn btn-success" (click)="addHero(heroName.value); heroName.value=''">Add</button>
+            </div>
+        </div>
+    </div>
+</div>

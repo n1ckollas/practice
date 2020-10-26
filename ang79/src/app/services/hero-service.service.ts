@@ -52,7 +52,14 @@ export class HeroService {
       tap( _ => this.log(`Updated Hero: ${hero.name}`)),
       catchError(this.handleError<Hero>("Failed to Update hero")),
     )
-  } 
+  }
+
+  addHero(hero: Hero): Observable <Hero> {
+    return this.http.post<Hero>(this.heroUrl, hero, this.httpOptions).pipe(
+      tap( (newHero: Hero) => this.log(`Adde a Hero: ${newHero.name}`)),
+      catchError(this.handleError<Hero>("Failed to Add hero")),
+    )
+  }
 
 
 
