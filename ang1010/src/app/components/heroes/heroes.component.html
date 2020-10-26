@@ -1,13 +1,13 @@
-<div class="card mb-2 mt-2">
+<div class="card mb-2 mt-2" *ngIf="selectedHero">
     <div class="card-header">
-        <h5>{{hero.name | uppercase}}'s Details:</h5>
+        <h5>{{selectedHero.name | uppercase}}'s Details:</h5>
         <p>
             <span class="badge badge-secondary">id: </span>
-            {{hero.id}}
+            {{selectedHero.id}}
         </p>
         <p>
             <span class="badge badge-secondary">Name: </span>
-            {{hero.name}}
+            {{selectedHero.name}}
         </p>
     </div>
     <div class="card-body">
@@ -15,7 +15,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text">Name:</span>
             </div>
-            <input type="text" class="form-control" [(ngModel)]="hero.name">
+            <input type="text" class="form-control" [(ngModel)]="selectedHero.name">
         </div>
     </div>
 </div>
@@ -27,7 +27,9 @@
     <div class="card-body">
         <ul class="list-group">
             <li class="list-group-item" 
-                *ngFor="let hero of heroes">
+            *ngFor="let hero of heroes"
+            (click)="onSelect(hero)"
+            [class.active]="selectedHero === hero">
                 <span class="badge badge-secondary">{{hero.id}}</span>
                 {{hero.name}}
                 <span class="badge badge-danger float-right pointer">X</span>
