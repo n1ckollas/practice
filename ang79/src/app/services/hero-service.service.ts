@@ -39,13 +39,20 @@ export class HeroService {
     )
   }
 
-  getHero(id: number){
+  getHero(id: number): Observable <Hero>{
     const url = `${this.heroUrl}/${id}`;
-    return this.http.get<Hero[]>(url).pipe(
+    return this.http.get<Hero>(url).pipe(
       tap( _ => this.log("Fetched all the Heroes")),
-      catchError(this.handleError<Hero[]>("Failed to Load Heroes")),
+      catchError(this.handleError<Hero>("Failed to Load Heroes")),
     )
   }
+
+  updateHero(hero: Hero): Observable <Hero> {
+    return this.http.put<Hero>(this.heroUrl, hero, this.httpOptions).pipe(
+      tap( _ => this.log(`Updated Hero: ${hero.name}`)),
+      catchError(this.handleError<Hero>("Failed to Update hero")),
+    )
+  } 
 
 
 
