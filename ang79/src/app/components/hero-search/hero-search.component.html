@@ -1,1 +1,18 @@
-<p>hero-search works!</p>
+<div class="card mb-2">
+    <div class="card-header">
+        <h6>Search Heroes</h6>
+    </div>
+    <div class="card-body">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Search</span>
+            </div>
+            <input type="text" class="form-control" #term (input)="search(term.value)">
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" *ngFor="let hero of heroes$ | async">
+            {{hero.name}}
+          </li>
+        </ul>
+    </div>
+</div>
