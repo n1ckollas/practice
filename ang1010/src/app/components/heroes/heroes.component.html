@@ -10,7 +10,7 @@
             [class.active]="selectedHero === hero">
                 <span class="badge badge-secondary mr-2">{{hero.id}}</span>
                 <a routerLink="/detail/{{hero.id}}">{{hero.name}}</a>
-                <span class="badge badge-danger float-right pointer">X</span>
+                <span class="badge badge-danger float-right pointer" (click)="deleteHero(hero)">X</span>
             </li>
         </ul>
     </div>
