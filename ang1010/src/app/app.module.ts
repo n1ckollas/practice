@@ -8,6 +8,10 @@ import { HeroDetailsComponent } from './components/hero-details/hero-details.com
 import { MessagesComponent } from './components/messages/messages.component';
 import { AppRoutingModule } from './routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryApiService } from './services/in-memory-api.service';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +25,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryApiService, {dataEncapsulation: false})
   ],
   providers: [],
   bootstrap: [AppComponent]
