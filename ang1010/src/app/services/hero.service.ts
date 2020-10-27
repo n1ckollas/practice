@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Hero } from '../types/hero.type';
@@ -10,7 +10,10 @@ import { tap, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class HeroService {
-  heroUrl = 'api/heroes'
+  heroUrl = 'api/heroes';
+  httpOptions = {
+    headers: new HttpHeaders({'Content-Type': 'application/json'})
+  }
 
   constructor(
     private messageService: MessageService,
@@ -42,6 +45,13 @@ export class HeroService {
     return this.http.get<Hero>(url).pipe(
       tap(_ => this.log(`Found a single Hero`)),
       catchError(this.handlError<Hero>("Failure to find a hero"))
+    )
+  }
+
+  updateHero(hero: Hero): Observable<Hero>{
+    return this.http.put<Hero>(this.heroUrl, hero, this.httpOptions).pipe(
+      tap(_ => this.log(`Updated hero => ${hero.name} `)),
+      catchError(this.handlError<Hero>("Failde to update a hero"))
     )
   }
 }
