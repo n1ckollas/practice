@@ -69,4 +69,15 @@ export class HeroService {
       catchError(this.handlError<Hero>("Failde to delte a hero")) 
     )
   }
+
+  searchHero(term: string): Observable<Hero[]> {
+   const url = `${this.heroUrl}/?name=${term}`;
+
+   return this.http.get<Hero[]>(url).pipe(
+    tap(heroes => heroes.length ? 
+        this.log(`Found ${heroes.length} heroes`) :
+        this.log(`Found NO heroes`)),
+    catchError(this.handlError<Hero[]>("Failed hero call")) 
+   )
+  } 
 }

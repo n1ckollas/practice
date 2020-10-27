@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="card-header">
+        <h5>Search Heroes</h5>
+    </div>
+    <div class="card-body">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Hero:</span>
+            </div>
+            <input type="text" class="form-control" #term (input)="search(term.value)">
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" *ngFor="let hero of heroes$ | async">{{hero.name}}</li>
+        </ul>
+    </div>
+</div>
