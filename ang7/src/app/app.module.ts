@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
@@ -16,6 +16,8 @@ import { EffectsModule } from '@ngrx/effects'
 import { TodosAPI } from './store/api/todos.api';
 import { effects } from './store';
 import { todosReducers } from "./store/reducers/todos.reducers";
+import { TemplateFormComponent } from './components/template-form/template-form.component';
+import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
 
 
 @NgModule({
@@ -25,11 +27,15 @@ import { todosReducers } from "./store/reducers/todos.reducers";
     HeroDetailComponent,
     TodosComponent,
     DashboardComponent,
+    MessagesComponent,
+    TemplateFormComponent,
+    ReactiveFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     StoreModule.forRoot({
       todos: todosReducers
@@ -38,8 +44,6 @@ import { todosReducers } from "./store/reducers/todos.reducers";
   ],
   providers: [
     TodosAPI,
-    MessagesComponent,
-    DashboardComponent
   ],
   bootstrap: [AppComponent]
 })

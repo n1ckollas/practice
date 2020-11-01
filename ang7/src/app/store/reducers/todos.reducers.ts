@@ -1,4 +1,5 @@
 import * as fromTodos from '../actions/todos.actions';
+
 export interface TodosState {
     todos:any[],
     loaded: boolean,
@@ -10,6 +11,7 @@ const initialState = {
     loaded: false,
     loading: false,
 }
+
 export function todosReducers(state = initialState, action: fromTodos.TodosAction): TodosState {
     switch(action.type){
         case fromTodos.LOAD_TODOS: {

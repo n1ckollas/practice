@@ -11,14 +11,13 @@ export class TodosEffect{
         private actions$:Actions,
         private todosApi: TodosAPI,
     ){}
-
+    
     @Effect()
     loadTodos$ = this.actions$.pipe(
         ofType(todoActions.LOAD_TODOS),
         switchMap(() => {
             return this.todosApi.LaodTodos().pipe(
-                map(todos => 
-                    new todoActions.LoadTodosSuccess(todos)),
+                map(todos => new todoActions.LoadTodosSuccess(todos)),
                 catchError(error => of(new todoActions.LoadTodosFail(error)))
             )
         })
