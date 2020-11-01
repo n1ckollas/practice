@@ -8,6 +8,7 @@ import { FormBuilder, Validators, FormArray } from '@angular/forms';
   styleUrls: ['./form-builder.component.css']
 })
 export class FormBuilderComponent implements OnInit {
+
   profileForm = this.fb.group({
     firstName:['', Validators.required],
     lastName: [''],
@@ -21,10 +22,10 @@ export class FormBuilderComponent implements OnInit {
       this.fb.control(''),
     ])
   })
+
   constructor(private fb: FormBuilder) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   get aliases(){
     return this.profileForm.get('aliases') as FormArray;
