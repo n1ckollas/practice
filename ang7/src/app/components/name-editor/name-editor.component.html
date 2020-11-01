@@ -1,0 +1,13 @@
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">Name:</span>
+  </div>
+  <input type="text" class="form-control" [formControl]="name">
+</div>
+
+<p>
+  <span class="badge">Result:</span>
+  {{name.value}}
+</p>
+
+<button class="btn btn-primary" (click)="updateName()">Update Name</button>

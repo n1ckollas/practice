@@ -16,8 +16,9 @@ import { EffectsModule } from '@ngrx/effects'
 import { TodosAPI } from './store/api/todos.api';
 import { effects } from './store';
 import { todosReducers } from "./store/reducers/todos.reducers";
-import { TemplateFormComponent } from './components/template-form/template-form.component';
-import { ReactiveFormComponent } from './components/reactive-form/reactive-form.component';
+import { NameEditorComponent } from './components/name-editor/name-editor.component';
+import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
+import { FormBuilderComponent } from './components/form-builder/form-builder.component';
 
 
 @NgModule({
@@ -28,8 +29,9 @@ import { ReactiveFormComponent } from './components/reactive-form/reactive-form.
     TodosComponent,
     DashboardComponent,
     MessagesComponent,
-    TemplateFormComponent,
-    ReactiveFormComponent,
+    NameEditorComponent,
+    ProfileEditorComponent,
+    FormBuilderComponent,
   ],
   imports: [
     BrowserModule,
