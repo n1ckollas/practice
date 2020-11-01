@@ -1,9 +1,11 @@
+<div class="badge badge-primary">{{profileForm.status}}</div> 
+
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
   <div class="input-group mb-3">
     <div class="input-group-prepend">
       <span class="input-group-text"  id="basic-addon1">First Name:</span>
     </div>
-    <input type="text" class="form-control" formControlName="firstName">
+    <input type="text" class="form-control" formControlName="firstName" required>
   </div>
 
   <div class="input-group mb-3">
@@ -41,9 +43,21 @@
       <input type="text" class="form-control" formControlName="zip">
     </div>
   </div>
+  <h3>Aliases</h3>
+
+  <div formArrayName="aliases">
+    <div class="input-group mb-3" *ngFor="let address of aliases.controls; let i=index">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Alias:</span>
+      </div>
+      <input type="text" class="form-control" [formControlName]="i">
+    </div>
+  </div>
   
+
   <div class="btn-group">
     <button class="btn btn-success" type="submit" [disabled]="!profileForm.valid">Send</button>
-    <button class="btn btn-warning" type="submit" (click)="updateProfile()">Update</button>
+    <button class="btn btn-success" type="button" (click)="addAlias()">Add aliase</button>
+    <button class="btn btn-warning" type="button" (click)="updateProfile()">Update</button>
   </div>
 </form>
