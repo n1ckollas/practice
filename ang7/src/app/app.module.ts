@@ -19,6 +19,7 @@ import { todosReducers } from "./store/reducers/todos.reducers";
 import { NameEditorComponent } from './components/name-editor/name-editor.component';
 import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
 import { FormBuilderComponent } from './components/form-builder/form-builder.component';
+import { HeroFormComponent } from './commponents/hero-form/hero-form.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { FormBuilderComponent } from './components/form-builder/form-builder.com
     NameEditorComponent,
     ProfileEditorComponent,
     FormBuilderComponent,
+    HeroFormComponent,
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NameEditorComponent } from './components/name-editor/name-editor.component';
 import { ProfileEditorComponent } from './components/profile-editor/profile-editor.component';
 import { FormBuilderComponent } from './components/form-builder/form-builder.component';
+import { HeroFormComponent } from './commponents/hero-form/hero-form.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path:'name-editor', component:NameEditorComponent},
   {path:'profile-editor', component:ProfileEditorComponent},
   {path:'form-builder', component:FormBuilderComponent},
+  {path:'hero-form', component:HeroFormComponent}
 ]
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

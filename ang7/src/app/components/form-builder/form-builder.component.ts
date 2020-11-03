@@ -7,6 +7,7 @@ import { FormBuilder, Validators, FormArray } from '@angular/forms';
   templateUrl: './form-builder.component.html',
   styleUrls: ['./form-builder.component.css']
 })
+
 export class FormBuilderComponent implements OnInit {
 
   profileForm = this.fb.group({
